@@ -1,14 +1,14 @@
-import pandas as pd
+import polars as pl
 import matplotlib.pyplot as plt
 
 
-def pandas_descriptive_stat_mean(df: pd.DataFrame, col: str) -> float:
+def polars_descriptive_stat_mean(df: pl.DataFrame, col: str) -> float:
     return df[col].mean()
 
-def pandas_descriptive_stat_median(df: pd.DataFrame, col: str) -> float:
+def polars_descriptive_stat_median(df: pl.DataFrame, col: str) -> float:
     return df[col].median()
 
-def pandas_descriptive_stat_std(df: pd.DataFrame, col: str) -> float:
+def polars_descriptive_stat_std(df: pl.DataFrame, col: str) -> float:
     return df[col].std()
 
 def visualize_data(df):
@@ -20,9 +20,9 @@ def visualize_data(df):
 
 
 if __name__ == '__main__':
-    cars = pd.read_csv(r"https://gist.githubusercontent.com/seankross/a412dfbd88b3db70b74b/raw/5f23f993cd87c283ce766e7ac6b329ee7cc2e1d1/mtcars.csv")
+    cars = pl.read_csv(r"https://gist.githubusercontent.com/seankross/a412dfbd88b3db70b74b/raw/5f23f993cd87c283ce766e7ac6b329ee7cc2e1d1/mtcars.csv")
     print(cars.head())
-    print(pandas_descriptive_stat_mean(cars, 'mpg'))
-    print(pandas_descriptive_stat_median(cars, 'mpg'))
-    print(pandas_descriptive_stat_std(cars, 'mpg'))
+    print(polars_descriptive_stat_mean(cars, 'mpg'))
+    print(polars_descriptive_stat_median(cars, 'mpg'))
+    print(polars_descriptive_stat_std(cars, 'mpg'))
     visualize_data(cars)
