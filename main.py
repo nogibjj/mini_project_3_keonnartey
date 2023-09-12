@@ -1,7 +1,6 @@
 import polars as pl
 import matplotlib.pyplot as plt
 
-
 def polars_descriptive_stat_mean(df: pl.DataFrame, col: str) -> float:
     return df[col].mean()
 
